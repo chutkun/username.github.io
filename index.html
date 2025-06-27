@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Free YouTube Downloader</title>
+    <style>
+        body { font-family: Arial; background: #f5f5f5; text-align: center; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
+        input { width: 80%; padding: 10px; margin: 10px 0; }
+        button { background: red; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Downloader</h1>
+        <input type="text" id="youtube-url" placeholder="Paste YouTube Link Here">
+        <button onclick="downloadVideo()">Download MP4</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function downloadVideo() {
+            const url = document.getElementById("youtube-url").value;
+            if (!url.includes("youtube.com")) {
+                document.getElementById("result").innerHTML = "❌ Invalid YouTube URL!";
+                return;
+            }
+            window.open("https://yt1s.com/en20?q=" + url, "_blank");
+        }
+    </script>
+</body>
+</html>
